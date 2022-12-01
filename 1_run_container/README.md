@@ -1,19 +1,15 @@
-# podman-ws-csa
+# 1_run_container
 
 <a name="readme-top"></a>
 
-<!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
+      <a href="#about-contents">About Contents</a>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#Task-and-steps">Task And Steps</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
@@ -24,42 +20,29 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+<!-- ABOUT CONTENTS -->
+## About Contents
 
-このプロジェクトはPodmanを活用するための基本的な操作と実際のPod作成を交えたデモおよびハンズオンのためのドキュメントです。
+最初のセクションになります。
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-### Built With
-
-このデモ/ハンズオンに関する主要なツールや関連したコンポーネントは以下になります。
-
-
-* [![Podman][podman.io]][Podman-url]
-* [![SpringBoot][spring.io]][spring-url]
-* [![WordPress][wp.org]][wp-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Task And Steps
 
 このデモ/ハンズオンはユーザがPodmanの基礎を理解するためのものです。ローカル環境でコンテナ、Podを動作させ、Podのライフサイクルを理解しkubernetes環境への展開を準備することを目的としています。
 以降のドキュメントでは対象の環境をRHELとして説明しますが、WindowsおよびMacでも同じように動かすことができます。
 
 まずは、前提条件を理解し、環境の準備を行なってください。
-
-
 
 
 ### Prerequisites
