@@ -86,28 +86,51 @@
 
 Podmanのインストールを実施します。また必要に応じてGitからドキュメントや教材をダウンロードする必要があるためGitも準備しておきます
 
-1. Podmanの準備
-  * GUI環境(Windows/Mac/RHEL)を利用する場合、 
-    [https://podman-desktop.io](https://podman-desktop.io/) からクライアントに対応したpodman desktopをダウンロードしてインストールしてください。
-    
-    podman desktopを起動すると、podmanのインストールを聞かれますので
+1. **Podmanの準備**
+  * *GUI環境(Windows/Mac/RHEL)を利用する場合*
+   
+    [https://podman-desktop.io](https://podman-desktop.io/) からクライアントに対応したpodman desktopをダウンロードしてインストールしてください。PodmanDesktopを起動して、Podmanが未インストールの場合、Installボタンが表示されるのでそこからインストールを実施してください。
 
-  * CUI環境(AWS RHEL)を利用する場合はyumからpodmanをインストールします
+    Podmanのインストールが完了するとPodmanDesktopにRun Podmanのスイッチが表示されるので今度はそれを有効化してください。podman machineが起動し、Podman is Runnning と表示されPodmanのバージョンが表示されたら準備完了です。
+
+  * *CUI環境(Windows/Mac)を利用する場合*
+
+    もしpodman desktopを利用しない場合はPodmanのインストール後にPodman machineを起動してください(以下はMacの例なのでbrewでinstallしています)
+
+    podman install
+    ```sh
+     brew install podman 
+    ```
+    初期化
+    ```sh
+     podman machine init 
+    ```
+    起動
+    ```sh
+     podman machine init 
+    ```
+
+
+  * *CUI環境(RHEL)を利用する場合*
+
+    yumまたはdnfからpodmanをインストールします。
     ```sh
      yum install podman
     ```
 
-2. Gitの準備
+
+
+2. **教材の準備**
   * クローンするだけですのでGitHubのアカウントは不要です
     ```sh
     yum install git
     ```
-3. 教材の取得 
+    教材の取得
     ```sh
     git clone https://github.com/toomorirh/podman-ws-csa.git
     ```
-4. バージョンの確認
-  * 4.2以上を用意してください
+3. **確認**
+  * podmanのバージョンを確認してください(v4.3.0以上)
     ```sh
     podman version 4.3.0
     ```
@@ -119,16 +142,20 @@ Podmanのインストールを実施します。また必要に応じてGitか�
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-チェックアウトした教材フォルダを参照します。フォルダにはプリフィックス番号があり、それに従ってコンテンツを進行します。詳細はそれぞれ子のフォルダにあるREADMEを参照してください。
+チェックアウトした教材フォルダを参照します。フォルダにはプリフィックス番号があり、それに従ってコンテンツを進行します。詳細はそれぞれのフォルダにあるREADME.mdを参照してください。
 
 コンテンツリスト
 * 開発者向け
-  1. podmanを使ったコンテナの実行 [1_run_container]
-  2. podmanを使ったコンテナの管理 [2_manage_container]
-  3. podmanを使ったDockerComposeからのPod作成 [3_convert_pod]
+  1. podmanを使ったコンテナの実行 ...[1_run_container](./1_run_container/README.mdabout-contents)
+  2. podmanを使ったコンテナの管理 ...[2_manage_container]
+  3. podmanを使ったDockerComposeからのPod作成 ...[3_convert_pod]
+
 
 * 運用者向け
   1. 準備中
+
+* 応用
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

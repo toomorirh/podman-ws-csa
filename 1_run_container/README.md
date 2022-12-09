@@ -5,22 +5,9 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-contents">About Contents</a>
-    </li>
-    <li>
-      <a href="#Task-and-steps">Task And Steps</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#about-contents">About Contents</a></li>
+    <li><a href="#h1-1-podman-machineの起動と確認">H1-1 Podman Machine起動</a></li>
+
   </ol>
 </details>
 
@@ -28,44 +15,90 @@
 
 <!-- ABOUT CONTENTS -->
 ## About Contents
+このコンテンツはPodman入門ハンズオンの最初のコンテンツになります。
+このコンテンツで実施するタスクは以下の２つです。
+* **H1-1** Podman machineの起動と確認
+* **H1-2** Podman をつかってコンテナを実行し動作を確認する
 
-最初のセクションになります。
+このコンテンツではPodmanをつかってコンテナを動かすことができる様になることが目的です。
+
+※もしまだPodmanの準備ができていない場合は[Getting Started](../README.md#getting-started)を参照してください。
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- GETTING STARTED -->
-## Task And Steps
+<!-- H1-1 -->
+## H1-1 podman machineの起動と確認
 
-このデモ/ハンズオンはユーザがPodmanの基礎を理解するためのものです。ローカル環境でコンテナ、Podを動作させ、Podのライフサイクルを理解しkubernetes環境への展開を準備することを目的としています。
-以降のドキュメントでは対象の環境をRHELとして説明しますが、WindowsおよびMacでも同じように動かすことができます。
+### **前提条件**
 
-まずは、前提条件を理解し、環境の準備を行なってください。
+* [Getting Started](../README.md#getting-started)でセットアップが完了していること
+* クライアントにPodmanがインストールされていること
 
+### **ゴール**
 
-### Prerequisites
+* podman machineが起動している状態にする
 
-1. 前提条件としてユーザが以下の環境及びスキルを備えていること
-    * コンテナに関する前提知識を学習していること
-    * Podmanに関する前提知識を学習していること(事前にワークショップにて座学を実施します)
-    * コマンドラインインターフェースでの操作ができること
-    * Podman/PodmanDesktopをインストール可能なクライアント(RHEL/OtherLinux/Windows/Mac)を準備する
-    * クライアントからインターネットに接続可能であること
-    * Gitを利用可能であること
+### Task
 
-2. また、下記の注意事項は各位のクライアントによる環境差異が起きる可能性を示します
-    * ローカルの仮想環境やDockerにてportが利用されていないこと
-    * 既にPodmanまたはPodmanDesktopを利用していないことを確認
-  
+1. Podmanのバージョンを確認する(Ver4.3.0以上であること)
+
       ```sh
-      podman -v
+      % podman -v
+      podman version 4.3.1
       ```
 
+      <br/>
+      <br/>
+
+2. Podman machineの初期化を行う(Getting Startedで実施済みなら無視)
+
+      ```sh
+      % podman machine init
+      Downloading VM image: fedora-coreos-36.20220723.2.2-qemu.aarch64.qcow2.xz: done
+      Extracting compressed file
+      ```
+      * イメージは初回のみダウンロード実施されます
+      * 場合によってはイメージの更新が発生することがあります
+      * ダウンロードされるマシンはアーキテクチャによって異なるので上記の結果どおりにならない場合があります。  
+      * イメージはfedora-coreosがベースになります
+
+      <br/>
+      <br/>
+      
+
+3. Podman machineを起動します
+      ```sh
+      % podman machine start
+      Starting machine "podman-machine-default"
+      Waiting for VM ...
+      Mounting volume...
+
+        ...
+
+       Machine "podman-machine-default" started successfully
+      ```
+      起動したら動作していることを以下のコマンドで確認します
+      ```sh
+      % podman machine ls
+      NAME                     VM TYPE     CREATED      LAST UP            CPUS        MEMORY      DISK SIZE
+      podman-machine-default*  qemu        5 weeks ago  Currently running  1           2.147GB     107.4GB
+      ```
+      * Currently running が表示されていれば成功です
+      * Podman machineは　`podman machine start`　で起動　`podman machine stop` で停止させることができます
+      * podman desktopで作成した場合デフォルト名`podman-machine-default*`が付与されています
+      <br/>
+      <br/>
+  
+これでタスクは完了です。
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### Installation
+
+## H1-2 Installation
 
 Podmanのインストールを実施します。また必要に応じてGitからドキュメントや教材をダウンロードする必要があるためGitも準備しておきます
 
@@ -98,84 +131,9 @@ Podmanのインストールを実施します。また必要に応じてGitか�
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+## 参考
 
-<!-- USAGE EXAMPLES -->
-## Usage
-
-チェックアウトした教材フォルダを参照します。フォルダにはプリフィックス番号があり、それに従ってコンテンツを進行します。詳細はそれぞれ子のフォルダにあるREADMEを参照してください。
-
-コンテンツリスト
-* 開発者向け
-  1. podmanを使ったコンテナの実行 [1_run_container]
-  2. podmanを使ったコンテナの管理 [2_manage_container]
-  3. podmanを使ったDockerComposeからのPod作成 [3_convert_pod]
-
-* 運用者向け
-  1. 準備中
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Contents Creation
-    - [x] For Developer
-    - [ ] For Operator
-- [ ] Run Your Pod on k8s/OpenShift
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b ***/***`)
-3. Commit your Changes (`git commit -m 'Add some ***'`)
-4. Push to the Branch (`git push origin ***/***`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the Apache-2.0 License. See `LICENSE` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Tomoki Omori -  toomori@redhat.com
-
-Project Link: None
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[podman.io]: https://img.shields.io/badge/Podman-892CA0?logo=podman&style=for-the-badge
-[podman-url]: https://podman.io/
-[spring.io]: https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=Spring&logoColor=white
-[spring-url]: https://spring.io/projects/spring-boot
-[wp.org]: https://img.shields.io/badge/Wordpress-21759B.svg?logo=wordpress&style=for-the-badge
-[wp-url]: hhttps://ja.wordpress.org/
+[【podman machine】macOS上でPodmanを実行する新コマンドの紹介](https://rheb.hatenablog.com/entry/podman-machine)
 
 
 
