@@ -1,0 +1,14 @@
+# Change the image to match the machine's architecture.
+FROM arm64v8/openjdk:17-jdk
+# FROM amd64/openjdk:17-jdk 
+# If you use images provided by RedHat, please refer to the registry.
+# FROM registry.access.redhat.com/ubi8/openjdk-17:1.14-4.1666624568
+
+WORKDIR /workspace
+
+# ARG JAR_FILE=./demov1/build/libs/*.jar
+# ARG JAR_FILE=./jar/v1/*.jar
+ARG JAR_FILE=./jar/v2/*.jar
+
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","app.jar"]

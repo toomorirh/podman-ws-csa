@@ -130,7 +130,7 @@ Podmanのインストールを実施します。また必要に応じてGitか�
     git clone https://github.com/toomorirh/podman-ws-csa.git
     ```
 3. **確認**
-  * podmanのバージョンを確認してください(v4.3.0以上)
+  * Podmanのバージョンを確認してください(v4.3.0以上)
     ```sh
     podman version 4.3.0
     ```
@@ -142,20 +142,30 @@ Podmanのインストールを実施します。また必要に応じてGitか�
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-チェックアウトした教材フォルダを参照します。フォルダにはプリフィックス番号があり、それに従ってコンテンツを進行します。詳細はそれぞれのフォルダにあるREADME.mdを参照してください。
+チェックアウトした教材フォルダを参照します。フォルダにはプリフィックス番号があるので、それに従ってコンテンツを進行します。詳細はそれぞれのフォルダにあるREADME.mdを参照してください。どのコンテンツから始めることもできますが、前提条件として前工程がある場合はそれを先に完了してください。
 
-コンテンツリスト
-* 開発者向け
+**コンテンツリスト**
+* 共通
   1. podmanを使ったコンテナの実行 ...[1_run_container](./1_run_container/README.md#about-contents)
   2. podmanを使ったコンテナの管理 ...[2_manage_container](./2_manage_container/README.md#about-contents)
-  3. podmanを使ったDockerComposeからのPod作成 ...[3_convert_pod]
 
+  <br/>    
+
+* 開発者向け
+
+  3. podmanを使ったアプリケーションの実行と更新 ...[3_update_container](./3_update_container/README.md#about-contents) . 
+
+  <br/>    
 
 * 運用者向け
-  1. 準備中
+  
+  4. 準備中 
+
+  <br/>
 
 * 応用
-
+  
+  5. Podman を使ったPodの作成 ...[5_create_pod](./5_create_pod/README.md#about-contents)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
