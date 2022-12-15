@@ -37,7 +37,7 @@ Podman を使って作成したアプリケーションを実行したり、コ�
 ### **前提条件**
 
 * [Getting Started](../README.md#getting-started)でセットアップが完了していること
-* [2_manage_container](./2_manage_container/README.md#about-contents)のタスクを完了していること
+* [2_manage_container](../2_manage_container/README.md#about-contents)のタスクを完了していること
 * Podman machineが起動していること
 
 

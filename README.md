@@ -153,7 +153,7 @@ Podmanのインストールを実施します。また必要に応じてGitか�
 
 * 開発者向け
 
-  3. podmanを使ったアプリケーションの実行と更新 ...[3_update_container](./3_update_container/README.md#about-contents) . 
+  3. podmanを使ったアプリケーションの実行と更新 ...[3_update_container](./3_update_container/README.md#about-contents) 
 
   <br/>    
 
