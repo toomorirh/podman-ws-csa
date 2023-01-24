@@ -107,7 +107,7 @@ Podmanのインストールを実施します。また必要に応じてGitか�
     ```
     起動
     ```sh
-     podman machine init 
+     podman machine start 
     ```
 
 
